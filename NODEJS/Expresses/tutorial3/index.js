@@ -25,6 +25,9 @@ function captureData(req, res, next){
 function CheckToken(req, res, next){
     let token =req.headers.token
     console.log(token)
+    if(token!=apiToken){
+        res.status(500).send('invalid token')
+    }
     next()
 }
 
