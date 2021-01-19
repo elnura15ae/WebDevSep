@@ -18,4 +18,10 @@ const apiController=(req, res)=>{
     })
 }
 
-module.exports = {homepageController, loginController, registerController,apiController}
+const UserController= (req, res)=>{
+    console.log('works')
+    console.log(req.body)
+    res.send('User section!')
+}
+
+module.exports = {homepageController, loginController, registerController,apiController, UserController}

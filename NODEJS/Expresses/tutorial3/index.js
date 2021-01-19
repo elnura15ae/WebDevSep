@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express();
-const {homepageController, loginController, registerController, apiController} = require('./controller/index') 
-const bodyParser = require('body-parser')
+const {homepageController, loginController, registerController, apiController, UserController} = require('./controller/index') 
+const bodyParser = require('body-parser');
 let apiToken="12345"
 
 app.use(bodyParser({
@@ -35,6 +35,7 @@ app.get('/', homepageController);
 app.get('/login', loginCheck, loginController)// Router level middleware
 app.post('/register', captureData, registerController)
 app.get('/api', CheckToken, apiController)
+app.all('/user', UserController)
 
 
 
