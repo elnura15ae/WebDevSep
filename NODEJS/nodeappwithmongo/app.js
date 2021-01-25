@@ -3,19 +3,26 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
+// install and import mongoose package "npm install mongoose"
 const mongoose = require('mongoose')
+
+// mongodb connection
+mongoose.connect('mongodb://localhost:27017/webdev',{
+  useNewUrlParser:true,
+  useUnifiedTopology:true,
+  useFindAndModify:false,
+  useCreateIndex:true
+})
+
+// event listener when app connected to db
+mongoose.connection.on('connected',()=>{
+  console.log('Connected to DB')
+})
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
-mongoose.connect('mongodb://localhost:27017/webdevsep',{
-  useCreateIndex:true,
-  useNewUrlParser:true,
-  useUnifiedTopology:true
-})
-
-mongoose.connection.on('connected',()=>{
-  console.log("connected")
-})
 
 var app = express();
 
