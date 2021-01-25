@@ -1,35 +1,24 @@
 var express = require('express');
 var router = express.Router();
-const User= require('../model/user')
+
+const {getUsers,addUser,getUserById,updateUserById,deleteUserById} = require('./controllers/userController')
+
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  User.find({}, (response)=>{ // all the records in the objects
-    if(err){
-      res.json(err)
-    }else{
-      res.json(response)
-    }
-  }) 
-});
+router.get('/', getUsers);
 
-router.post('/',(req, res)=>{
-  const newUser = new User({
-    username:req.body.username,
-    password:req.body.password
-  })
-  newUser.save()
-  .then(response=>{
-    res.json({
-      message:'OK',
-      data: response
-    })
-  })
-  .catch(err=>{
-    res.json(err)
-  })
-  // res.json({
-  //   id:1
-  // })
-})
+// post routers
+router.post('/',addUser)
+
+
+router.get('/:id',getUserById)
+
+
+// update user
+router.put('/:id',updateUserById)
+
+// delete user
+router.delete('/:id',deleteUserById)
+
+
 module.exports = router;

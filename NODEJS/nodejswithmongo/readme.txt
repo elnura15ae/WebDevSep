@@ -66,3 +66,12 @@ $set:{​​
 }​​
 }​​
 )
+
+app.js
+import mongoose library
+mongodb connection
+
+models> User.js
+User Model Schema
+
+nodemailer
