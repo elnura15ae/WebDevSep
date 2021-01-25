@@ -1,10 +1,12 @@
-const User = require('../../models/User')
+const User = require('../../model/user')
 const bcrypt = require('bcrypt')
+const jwt= require('jsonwebtoken')
+ 
 
 // USER CONTROLLER
 
 // get users controller
-const getUsers = (req, res) => {
+const getUsers=(req, res) => {
     User.find({}, (err, response) => {
         if (err) {
             res.json(err)
@@ -88,4 +90,43 @@ const deleteUserById = (req,res)=>{
     })
 }
 
-module.exports = { getUsers, getUserById, addUser, updateUserById,deleteUserById }
+// auth page
+
+const authController=(req, res)=>{
+    res.send('Auth page!')
+}
+const loginController = (req, res)=>{
+    let getUser;
+    User.findOne({
+        username: req.body.username
+    }).then(user=>{
+        if(user){
+            return res.status(401).json({
+                message:'Auth fail!'
+            })
+        } 
+        getUser=user;
+        return bcrypt.compare(req.body.password, user.password)
+    }).then(response =>{
+        if(response){
+            return res.status(401).json({
+                message:'Auth fail!'
+            })
+        } 
+        if (getUser !== null && getUser !== undefined){
+            let token = jwt.sign({
+                username:getUser.username,
+                userID:getUser._id
+            }, 'secret-pass',{
+                expiresIn:'1h'
+            });
+            res.status(200).json({
+                token:token,
+                expiresIn:3600,
+                _id:getUser._id
+            })
+        }
+    })
+}
+
+module.exports = { getUsers, getUserById, addUser, updateUserById,deleteUserById, authController, loginController }
