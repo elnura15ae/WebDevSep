@@ -8,7 +8,6 @@ ES7 React/Redux/GraphQL/React-Native snippets
 5. npm install --save bootstrap
 ( npm install reactstrap bootstrap)
 
-
 rcc-
 rfce -function component
 rafc
