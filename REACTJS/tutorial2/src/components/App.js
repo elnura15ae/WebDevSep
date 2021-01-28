@@ -8,7 +8,7 @@ export default class App extends Component {
             username:'Arne',
             password:'1234',
             age:12,
-            scores:[1,2,3,4],
+            scores:[1, 2, 3, 4],
             nestedObj:{
                 test:[1,2]
             },

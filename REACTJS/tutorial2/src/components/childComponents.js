@@ -4,7 +4,7 @@ export default class childComponents extends Component {
     render() {
         return (
             <div>
-                Hello {this.props.username}
+                Hello {this.props.username}!
             </div>
         )
     }
