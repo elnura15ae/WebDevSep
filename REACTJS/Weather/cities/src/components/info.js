@@ -1,16 +1,14 @@
-import React from 'react';
-import Info from './components/info'
+import React, { Component } from 'react'
 
-
-class Info extends React.Component{
-    render (){
+export default class Info extends Component {
+    render() {
         return (
             <div>
+                <div>
                 <h2>Weather App</h2>
                 <p>Learn weather of your city!</p>
+            </div>
             </div>
         )
     }
 }
-
-export default Info();

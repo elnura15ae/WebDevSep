@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react'
+import Info from "./components/info"
+import Form from "./components/form"
+import Weather from "./components/weather"
 
-
-
-class App extends React.Component{
-  render(){
+export default class App extends Component {
+  render() {
     return (
       <div>
         
@@ -11,5 +12,3 @@ class App extends React.Component{
     )
   }
 }
-
-export default App();
