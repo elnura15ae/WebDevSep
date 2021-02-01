@@ -2,11 +2,23 @@ import React from 'react'
 import './App.css';
 
 class App extends React.Component {
-
+  //state
+  state={
+    coords:{
+      latitude:45,
+      longitude:60
+    }
+  }
   componentDidMount(){ //whenever u refresh the browser
+    // get device location
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition((position)=>{
-        console.log(position.coords.latitude)
+        let newCoords={
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude
+        }
+
+        this.setState({coords:newCoords});
       })
     }else{
       console.log("not supported")
