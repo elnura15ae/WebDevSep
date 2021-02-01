@@ -18,24 +18,27 @@ export default class App extends Component {
 
   getWeather = async (e) =>{
     e.preventDefault();
-    const city=<e className="taret elements city value"></e>
-     const api_url = await 
-     fetch(`api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)
-    const data= await api_url.json();
-    console.log(data)
+    const city=e.target.elements.city.value;
+    
+    if(city===true){
+      const api_url = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`)
+     const data= await api_url.json();
+     //console.log(data)
 
-    this.setState({
-      temp:data.main.temp,
-      city:data.name,
-      country: data.sys.country,
-      sunrise:data.sys.sunrise,
-      sunset:data.sys.sunset,
-      error:""
-    });
+      this.setState({
+        temp:data.main.temp,
+        city:data.name,
+        country: data.sys.country,
+        sunrise:data.sys.sunrise,
+        sunset:data.sys.sunset,
+        error:""
+      });
+      }   
     }
   
   render() {
     return (
+      <div className="wrapper">
       <div>
         <Info />
         <Form weatherMethod={this.getWeather}/>
@@ -47,6 +50,7 @@ export default class App extends Component {
         sunset={this.state.sunset}
         error={this.state.error}
         />
+      </div>
       </div>
     )
   }
