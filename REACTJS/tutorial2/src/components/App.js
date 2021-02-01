@@ -15,6 +15,7 @@ export default class App extends Component {
             nestedObj:{
                 test:[1,2]
             },
+        
             myFunction:()=>console.log('test')
 
         }
