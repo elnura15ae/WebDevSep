@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Input} from 'reactstrap'
 import Counter from './Counter'
 //import ChildComponents from './childComponents'
 
@@ -19,6 +20,10 @@ export default class App extends Component {
         }
     }
 
+    contactFormValues={
+        p:p
+    }
+
     TestFunction= () =>{
         console.log('hello world')
         this.setState({
@@ -26,6 +31,13 @@ export default class App extends Component {
             age:this.state.age+1
         })
         console.log(this.state.username)
+    }
+
+    inputHandler=(e)=>{
+        //console.log(e.target.value)
+        this.setState({
+
+        })
     }
 
     render() {
@@ -37,6 +49,11 @@ export default class App extends Component {
                 {this.state.myFunction()}
                 <a href="#" onClick={this.TestFunction} >Click me</a> */}
                 <Counter projectname="counter project"/>
+                <hr/>
+                <Input type="text" classname="bg-primary text-white" onChange={this.inputHandler}/>
+                <p className="lead">
+                    {this.state.comment}
+                </p>
             </div>
         )
     }

@@ -5,15 +5,30 @@ export default class Counter extends Component {
        super(props)
        this.state={
            count:0
-       },
-       this.Increase= this.Increase.bind(this)
+       }
+       //this.Increase= this.Increase.bind(this)
    }
 
-   Increase(){
+   Increase=()=>{
        console.log('Increase Function and non-arrow-func')
         this.setState({
-            count:5
+            count:this.state.count+1
         })
+    }
+
+    Decrease=()=>{
+        this.setState({
+            count:this.state.count-1
+        })
+        if(this.state.count<= 0) {
+            this.setState({
+                count:0
+            })
+        }else{
+            this.setState({
+                count:this.state.count-1
+            })
+        }
     }
    
     render() {
@@ -23,7 +38,7 @@ export default class Counter extends Component {
                     <Row>
                         <Col>
                         <h1>{this.props.projectname}</h1>
-                        <p className="lead font-weight-bold text-danger">Count:0</p>
+                        <p className="lead font-weight-bold text-danger">Count: {this.state.count}</p>
                         <hr/>
                         <Button className="mr-1" onClick={this.Increase} color="danger">+</Button>
                         <Button color="dark">-</Button>
