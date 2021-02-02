@@ -17,4 +17,4 @@ ES7 React/Redux/GraphQL/React-Native snippets
 
 rcc-
 rfce -function component
-rafc
+rafc - 
