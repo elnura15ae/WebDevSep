@@ -15,6 +15,9 @@ ES7 React/Redux/GraphQL/React-Native snippets
 5. npm install --save bootstrap
 ( npm install reactstrap bootstrap)
 
+
+*npm i react-routing-dom
+
 rcc-
 rfce -function component
 rafc - 
