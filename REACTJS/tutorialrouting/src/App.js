@@ -9,6 +9,7 @@ import NavigationBar from './components/NavigationBar'
 import Home from './pages/Home'
 import Blog from './pages/Blog'
 
+
 /* 
 npm install react-router-dom
 */
@@ -23,15 +24,15 @@ export default class App extends Component {
       body:'ipsum lorem etc....'
       },
       {
-        id:1,
+        id:2,
         title:"lorem ipsum2",
         body:'ipsum lorem etc....'
-        },
-        {
-          id:1,
-          title:"lorem ipsum3",
-          body:'ipsum lorem etc....'
-          }
+      },
+      {
+            id:3,
+            title:"lorem ipsum3",
+            body:'ipsum lorem etc....'
+      }
   ]
   
     return (
