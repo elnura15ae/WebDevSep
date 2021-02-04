@@ -1,8 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, Route} from 'react-router-dom'
 import ArticlDetails from './ArticlDetails'
-import {useParams} from 'react-router-dom'
-
 
 
 export default function Blog({data}) {
@@ -11,13 +9,13 @@ export default function Blog({data}) {
             <h1>Blogpage</h1>
             {console.log(data)}
             {
-                data.map((l,i)=>{
+                data.map((item,i)=>{
                     return (
-                        <Link key={i} to={`/blog/${link.id}`} style={{'display':'block'}}>{l.title}</Link>
+                        <Link key={i} to={`/blog/${item.id}`} style={{'display':'block'}}>{item.title}</Link>
                     )
                 })
             }
-            <Route path='/blog/:id' render={()=>{ArticlDetails}}/>
+            <Route path='/blog/:id' render={()=><ArticlDetails />}/>
         </div>
     )
 }

@@ -19,17 +19,17 @@ export default class App extends Component {
     const myLocalDB=[  
       {
       id:1,
-      title:"lorem ipsum",
+      title:"lorem ipsum1",
       body:'ipsum lorem etc....'
       },
       {
         id:1,
-        title:"lorem ipsum",
+        title:"lorem ipsum2",
         body:'ipsum lorem etc....'
         },
         {
           id:1,
-          title:"lorem ipsum",
+          title:"lorem ipsum3",
           body:'ipsum lorem etc....'
           }
   ]
