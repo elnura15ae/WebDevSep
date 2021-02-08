@@ -8,7 +8,8 @@ Adding Sass to Create React App!
 * import .scss
 
 
+To have more visitors in Google, Yahoo and etc...
 
-npm install create-razzle-app -g
+3. *npm install create-razzle-app -g  ---search engine 
 
-create-razzle-app reactjs-ssr
+4. *npm create-razzle-app reactjs-ssr 

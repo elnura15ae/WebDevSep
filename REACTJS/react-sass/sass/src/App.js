@@ -18,6 +18,11 @@ function App() {
           Learn React
         </a>
       </header>
+      <p className="post-1">Post Title</p>
+      <p className="post-2">Post Title</p>
+      <p className="post-3">Post Title</p>
+      <p className="post-4">Post Title</p>
+      <p className="post-5">Post Title</p>
     </div>
   );
 }
