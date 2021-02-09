@@ -1,3 +1,5 @@
+search engines for google and etc..
+
 * npm create-razzle-app nameofapp
 
 
