@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
 import Users from './users'
 import {UserContext} from './context/UserContext'
 import Blog from './blog'
