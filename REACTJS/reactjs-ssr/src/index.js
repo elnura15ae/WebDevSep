@@ -1,4 +1,3 @@
-import React, {useContext} from 'react'
 import express from 'express';
 
 let app = require('./server').default;
