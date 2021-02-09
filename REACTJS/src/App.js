@@ -2,10 +2,9 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import './App.css';
-import Users from './users'
-import { UserContext} from './context/UserContext'
-import Blog from './Blog'
-
+import Users from './Users'
+import {UserContext} from './context/UserContext'
+import Blog from './Blog';
 
 const users = [
   {
@@ -614,8 +613,8 @@ const App = () => (
   <Switch>
     <UserContext.Provider value={users}>
     <Route exact path="/" component={Home} />
-    <Route path="/users" component={Users} />
-    <Route path="/blog" component={Blog} />
+    <Route path="/users" component={Users}/>
+    <Route path="/blog" component={Blog}/>
     </UserContext.Provider>
   </Switch>
 );

@@ -1,7 +1,6 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import {UserContext} from './context/UserContext'
-
-export default function users() {
+function Users() {
     const context = useContext(UserContext)
     return (
         <div>
@@ -10,3 +9,5 @@ export default function users() {
         </div>
     )
 }
+
+export default Users
