@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ChildComponentSecond() {
+export default function ChildComponentSecond({userdata}) {
     return (
         <div>
             <h1>Child Component 2</h1>
