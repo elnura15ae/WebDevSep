@@ -7,9 +7,9 @@
 
 module.exports = {
   
-    index:(req, res)=>{
-        res.view('pages/blog','atilla'='username')
-    }
+     index:(req, res)=>{
+         res.view('pages/blog', {username:['atilla','balin']})
+     }
 
 };
 
